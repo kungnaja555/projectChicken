@@ -17,12 +17,14 @@ class LoginViewModel(
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     var username = MutableLiveData<String>()
     var password = MutableLiveData<String>()
+    var alertTxt = MutableLiveData<String>()
 
     private val _checkLoginComplete = MutableLiveData<Boolean>()
     val checkLoginComplete: LiveData<Boolean>
         get() = _checkLoginComplete
 
     init {
+        alertTxt.value = ""
         Log.i("LoginViewModel","LoginViewModel created")
     }
 
@@ -35,13 +37,17 @@ class LoginViewModel(
     fun clickLogin(){
         uiScope.launch {
             var find = getUser()
-            println(find)
-            _checkLoginComplete.value = ( checkNull() &&  chechMathUser(find) )
+            Log.i("LoginViewModel", find.toString())
+            if( checkNull() ) alertTxt.value = "กรุณากรอกข้อมูลให้ครบถ้วน"
+            else if( !chechMathUser(find) ) alertTxt.value = "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
+            else {
+                _checkLoginComplete.value = true
+            }
         }
     }
 
     private fun chechMathUser(find: User?): Boolean {
-        return (find?.password == password.value && find?.username == username.value)
+        return ( find?.password == password.value && find?.username == username.value )
     }
 
     private suspend fun getUser(): User? {
@@ -51,7 +57,7 @@ class LoginViewModel(
     }
 
     private fun checkNull(): Boolean {
-        return ( username.value != null && password.value != null )
+        return ( username.value == null || password.value == null )
     }
 
 

@@ -41,8 +41,6 @@ class LoginFragment : Fragment() {
         loginViewModel.checkLoginComplete.observe(this, Observer {
             if (it) {
                 gotoNextPage()
-            }else {
-                binding.alertTxt.visibility = View.VISIBLE
             }
         })
 

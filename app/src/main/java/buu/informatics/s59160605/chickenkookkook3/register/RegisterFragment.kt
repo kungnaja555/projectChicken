@@ -41,7 +41,10 @@ class RegisterFragment : Fragment() {
 
         registerViewModel.registerComplete.observe(this, Observer {
             if(it){
-                goLogin()
+                Toast.makeText(activity,"Register Success", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(
+                    RegisterFragmentDirections
+                        .actionRegisterFragmentToLoginFragment())
             }
         })
 
@@ -52,13 +55,4 @@ class RegisterFragment : Fragment() {
 
         return binding.root
     }
-
-    private fun goLogin() {
-        Toast.makeText(activity,"Register Success", Toast.LENGTH_SHORT).show()
-        findNavController().navigate(
-            RegisterFragmentDirections
-                .actionRegisterFragmentToLoginFragment())
-    }
-
-
 }
