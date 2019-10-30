@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ChickenKookKook3</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_txt">LOG IN</string>
+    <string name="register_txt">REGISTER</string>
+    <string name="alert_txt">ชื่อผู้ใช้ หรือ รหัสผ่าน ไม่ถูกต้อง</string>
+</resources>
