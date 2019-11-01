@@ -11,6 +11,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
 import buu.informatics.s59160605.chickenkookkook3.R
 import buu.informatics.s59160605.chickenkookkook3.database.MyDatabase
 import buu.informatics.s59160605.chickenkookkook3.databinding.FragmentLoginBinding
@@ -40,7 +43,11 @@ class LoginFragment : Fragment() {
 
         loginViewModel.checkLoginComplete.observe(this, Observer {
             if (it) {
-                gotoNextPage()
+                Toast.makeText(activity,"Go To Next Page", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(
+                    LoginFragmentDirections
+                        .actionLoginFragmentToAddJournalFragment(loginViewModel.username.value.toString())
+                )
             }
         })
 
@@ -57,9 +64,6 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
-    private fun gotoNextPage() {
-        Toast.makeText(activity,"Go To Next Page", Toast.LENGTH_SHORT).show()
-    }
 
 
 }

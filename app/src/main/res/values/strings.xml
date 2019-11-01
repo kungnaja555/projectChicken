@@ -7,4 +7,7 @@
     <string name="register_txt">REGISTER</string>
     <string name="alert_login_txt">"%s"</string>
     <string name="alert_regis_txt">"%s"</string>
+    <string name="header_journal">บันทึกประจำวัน</string>
+    <string name="save_bt">บันทึกรายการ</string>
+    <string name="look_bt">ดูรายการ</string>
 </resources>

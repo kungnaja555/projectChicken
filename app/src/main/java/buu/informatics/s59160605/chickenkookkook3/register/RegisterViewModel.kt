@@ -60,7 +60,7 @@ class RegisterViewModel(
     }
 
     private fun checkMatchUsername(find: User?): Boolean {
-        return find==null
+        return find!=null
     }
 
 
