@@ -1,4 +1,4 @@
-package buu.informatics.s59160605.chickenkookkook3.database
+package buu.informatics.s59160605.chickenkookkook3.database.hen
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
