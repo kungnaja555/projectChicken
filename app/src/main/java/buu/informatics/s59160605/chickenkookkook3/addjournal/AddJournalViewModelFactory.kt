@@ -8,12 +8,11 @@ import java.lang.IllegalArgumentException
 
 class AddJournalViewModelFactory (
     private val dataSource: HenDao,
-    private val application: Application,
-    private val username: String
+    private val application: Application
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if(modelClass.isAssignableFrom(AddJournalViewModel::class.java)){
-            return AddJournalViewModel(dataSource,application,username) as T
+            return AddJournalViewModel(dataSource,application) as T
         }else{
             throw IllegalArgumentException("Unknown Login ViewModel Class")
         }

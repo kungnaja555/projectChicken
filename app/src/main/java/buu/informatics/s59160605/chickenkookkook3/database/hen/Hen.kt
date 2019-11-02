@@ -13,6 +13,6 @@ data class Hen(
     var date: String?,
 
     @ColumnInfo(name = "die")
-    var die: String?
+    var die: Int?
 )
 

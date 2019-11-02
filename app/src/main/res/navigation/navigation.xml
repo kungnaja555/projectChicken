@@ -34,5 +34,20 @@
         <argument
             android:name="username"
             app:argType="string" />
+        <action
+            android:id="@+id/action_addJournalFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="buu.informatics.s59160605.chickenkookkook3.about.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about">
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_aboutFragment_to_addJournalFragment"
+            app:destination="@id/addJournalFragment" />
     </fragment>
 </navigation>

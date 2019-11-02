@@ -9,7 +9,7 @@ import buu.informatics.s59160605.chickenkookkook3.database.hen.HenDao
 import buu.informatics.s59160605.chickenkookkook3.database.user.User
 import buu.informatics.s59160605.chickenkookkook3.database.user.UserDao
 
-@Database(entities = [User::class, Hen::class],version = 2)
+@Database(entities = [User::class, Hen::class],version = 1)
 abstract class MyDatabase : RoomDatabase(){
 
     abstract val userDao: UserDao
