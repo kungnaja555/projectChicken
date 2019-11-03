@@ -61,6 +61,15 @@ class AddJournalFragment : Fragment() {
            }
        })
 
+        addJournalViewModel.gotoData.observe(this, Observer {
+            if(it){
+                findNavController().navigate(
+                    AddJournalFragmentDirections
+                        .actionAddJournalFragmentToDataHenFragment(username)
+                )
+            }
+        })
+
         binding.addJournalViewModel = addJournalViewModel
         binding.lifecycleOwner = this
 

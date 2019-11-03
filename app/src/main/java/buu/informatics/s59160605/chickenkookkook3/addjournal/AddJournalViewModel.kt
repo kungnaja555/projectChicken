@@ -25,6 +25,10 @@ class AddJournalViewModel (
     val gotoAbout: LiveData<Boolean>
         get() = _gotoAbout
 
+    private val _gotoData = MutableLiveData<Boolean>()
+    val gotoData: LiveData<Boolean>
+        get() = _gotoData
+
     private val _insertComplete = MutableLiveData<Boolean>()
     val insertComplete: LiveData<Boolean>
         get() = _insertComplete
@@ -74,5 +78,9 @@ class AddJournalViewModel (
 
     fun doneGotoAbout(){
         _gotoAbout.value = true
+    }
+
+    fun doneGotoData(){
+        _gotoData.value = true
     }
 }

@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_addJournalFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_addJournalFragment_to_dataHenFragment"
+            app:destination="@id/dataHenFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -48,6 +51,18 @@
             app:argType="string" />
         <action
             android:id="@+id/action_aboutFragment_to_addJournalFragment"
+            app:destination="@id/addJournalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataHenFragment"
+        android:name="buu.informatics.s59160605.chickenkookkook3.datahen.DataHenFragment"
+        android:label="DataHenFragment"
+        tools:layout="@layout/fragment_data_hen" >
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_dataHenFragment_to_addJournalFragment"
             app:destination="@id/addJournalFragment" />
     </fragment>
 </navigation>
