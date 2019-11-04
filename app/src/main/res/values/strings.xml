@@ -18,4 +18,5 @@
     <string name="back_bt">ย้อนกลับ</string>
     <string name="data_hen_header">ดูบันทึก</string>
     <string name="share_bt">แชร์</string>
+    <string name="header_about">ข้อมูลบัญชี</string>
 </resources>

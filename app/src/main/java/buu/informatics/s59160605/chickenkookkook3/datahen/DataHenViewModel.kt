@@ -20,7 +20,7 @@ class DataHenViewModel (
     var dieQuantity = MutableLiveData<Int?>()
 
     val showDieQuantity = Transformations.map(dieQuantity){ die ->
-        "จำนวนทไก่ตายทั้งหมด : "+die+" ตัว"
+        "จำนวนไก่ตายทั้งหมด : "+die+" ตัว"
     }
 
     val dieHenAll = database.getAll()
