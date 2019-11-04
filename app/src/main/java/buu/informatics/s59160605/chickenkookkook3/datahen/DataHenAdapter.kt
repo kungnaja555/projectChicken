@@ -10,20 +10,6 @@ import buu.informatics.s59160605.chickenkookkook3.R
 import buu.informatics.s59160605.chickenkookkook3.TextItemViewHolder
 import buu.informatics.s59160605.chickenkookkook3.database.hen.Hen
 
-
-class DataHenDiffCallback : DiffUtil.ItemCallback<Hen>() {
-    override fun areItemsTheSame(oldItem: Hen, newItem: Hen): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun areContentsTheSame(oldItem: Hen, newItem: Hen): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-}
-
-
-
 class DataHenAdapter: RecyclerView.Adapter<DataHenAdapter.ViewHolder>(){
     var data = listOf<Hen>()
         set(value) {
