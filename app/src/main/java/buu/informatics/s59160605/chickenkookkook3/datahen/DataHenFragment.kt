@@ -1,12 +1,14 @@
 package buu.informatics.s59160605.chickenkookkook3.datahen
 
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -43,10 +45,21 @@ class DataHenFragment : Fragment() {
             )
         }
 
+        binding.shareBt.setOnClickListener {
+            startActivity(getShareIntent(dataHenViewModel.showDieQuantity))
+        }
+
         binding.dataHenViewModel = dataHenViewModel
         binding.setLifecycleOwner(this)
 
         return binding.root
+    }
+
+    private fun getShareIntent(shareContent: LiveData<String?>): Intent? {
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.setType("text/plain")
+            .putExtra(Intent.EXTRA_TEXT, shareContent.value)
+        return shareIntent
     }
 
 

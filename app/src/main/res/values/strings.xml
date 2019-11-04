@@ -15,6 +15,7 @@
     <string name="about_bt">ดูข้อมูลบัญชี</string>
     <string name="user_txt">ชื่อผู้ใช้ :" %s"</string>
     <string name="pass_txt">รหัสผ่าน :" %s"</string>
-    <string name="back_bt">น้อนกลับ</string>
+    <string name="back_bt">ย้อนกลับ</string>
     <string name="data_hen_header">ดูบันทึก</string>
+    <string name="share_bt">แชร์</string>
 </resources>
