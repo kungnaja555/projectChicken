@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import buu.informatics.s59160605.chickenkookkook3.database.user.User
 import buu.informatics.s59160605.chickenkookkook3.database.user.UserDao
 import kotlinx.coroutines.*
@@ -19,6 +20,13 @@ class AboutViewModel (
 
     val user = MutableLiveData<String>()
     val pass = MutableLiveData<String>()
+    val showUser = Transformations.map(user){
+        "ชื่อผู้ใช้ : "+it
+    }
+
+    val showPass = Transformations.map(pass){
+        "รหัสผ่าน : "+it
+    }
 
     private val _gotoAddJournal = MutableLiveData<Boolean>()
     val gotoAddJournal: LiveData<Boolean>

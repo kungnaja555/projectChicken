@@ -48,6 +48,7 @@ class AddJournalViewModel (
 
                 var newHen= Hen(date = date, die = die)
                 insert(newHen)
+                Log.i("AddJournalViewModel", newHen.toString())
                 dieNumber.value = ""
                 _insertComplete.value = true
             }

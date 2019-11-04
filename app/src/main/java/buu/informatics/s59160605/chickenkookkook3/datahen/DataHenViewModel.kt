@@ -18,11 +18,12 @@ class DataHenViewModel (
     val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     var dieQuantity = MutableLiveData<Int?>()
+
     val showDieQuantity = Transformations.map(dieQuantity){ die ->
         "จำนวนทไก่ตายทั้งหมด : "+die+" ตัว"
     }
 
-
+    val dieHenAll = database.getAll()
 
     init {
         Log.i("DataHenViewModel", "ViewModel Craeted!!")
